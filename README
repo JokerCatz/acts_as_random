@@ -3,11 +3,23 @@ acts_as_random
 Easy & Fast way to rand in model
 
 [model]
-acts_as_random
+    acts_as_random
 or
-acts_as_random :count => 10
+    acts_as_random :count => 10
 
 then
 
-Item.pick => @item(rand)
-Item.picks => Array (default length is 3)
+    Item.pick => @item(rand)
+    Item.picks => Array (default length is 3)
+
+and you can choice algorithms
+
+default algorithms is [id > rand(max(id) - min(id))].first
+
+then you can use
+
+    acts_as_random :rand_by_offset => true
+
+to set random by offset : [offset by (Ruby rand[model count])]
+
+default is very fast . but it's uneven , choice rand_by_offset will average :)
