@@ -1,1 +1,13 @@
-init
+acts_as_random
+============
+Easy & Fast way to rand in model
+
+[model]
+acts_as_random
+or
+acts_as_random :count => 10
+
+then
+
+Item.pick => @item(rand)
+Item.picks => Array (default length is 3)
